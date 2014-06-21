@@ -1,0 +1,214 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "id": "http://www.kissthinker.com/json-schema-ui/example-1",
+    "type": "object",
+    "title": "Temporary Event Notice",
+    "authority": "City of Westminster",
+    "presentation": "default-template.html",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "applicantDetails"
+    ],
+    "properties": {
+        "id": {
+            "type": "string"
+        },
+        "applicantDetails": {
+            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails#",
+            "type": "object",
+            "label": "1. Applicant Details",
+            "header": true,
+            "required": [
+                "personalDetails"
+            ],
+            "properties": {
+                "personalDetails": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails#",
+                    "type": "object",
+                    "label": "Personal Details",
+                    "subheader": true,
+                    "required": [
+                        "fullName"
+                    ],
+                    "properties": {
+                        "title": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/title#",
+                            "type": "string",
+                            "enum": [
+                                "Mr",
+                                "Mrs",
+                                "Miss",
+                                "Ms",
+                                "Dr",
+                                "Rev",
+                                "Sir",
+                                "Lord",
+                                "Lady",
+                                "Dame"
+                            ],
+                            "label": "Title",
+                            "input": "select"
+                        },
+                        "fullName": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/fullName#",
+                            "type": "string",
+                            "minLength": 2,
+                            "label": "Full name",
+                            "input": "text"
+                        },
+                        "dateOfBirth": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/dateOfBirth#",
+                            "type": "string",
+                            "pattern": "/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",
+                            "label": "Date of birth",
+                            "input": "date"
+                        },
+                        "placeOfBirth": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/placeOfBirth#",
+                            "type": "string",
+                            "label": "Place of birth",
+                            "input": "text"
+                        },
+                        "nationalInsuranceNumber": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/nationalInsuranceNumber#",
+                            "type": "string",
+                            "label": "National insurance number",
+                            "input": "text"
+                        }
+                    }
+                },
+                "contactDetails": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails#",
+                    "type": "object",
+                    "label": "Contact Details",
+                    "subheader": true,
+                    "properties": {
+                        "email": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/email#",
+                            "type": "string",
+                            "label": "Email",
+                            "input": "email"
+                        },
+                        "telephone": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/telephone#",
+                            "type": "string",
+                            "label": "Telephone",
+                            "input": "text"
+                        },
+                        "address": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/address#",
+                            "type": "string",
+                            "label": "Address",
+                            "input": "textarea"
+                        },
+                        "postcode": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/postcode#",
+                            "type": "string",
+                            "label": "Postcode",
+                            "input": "text"
+                        },
+                        "city": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/city#",
+                            "type": "string",
+                            "label": "City",
+                            "input": "text"
+                        },
+                        "country": {
+                            "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/contactDetails/country#",
+                            "type": "string",
+                            "label": "Country",
+                            "input": "text"
+                        }
+                    }
+                }
+            }
+        },
+        "premises": {
+            "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises#",
+            "type": "object",
+            "label": "2. The premises",
+            "header": true,
+            "required": [
+                "location"
+            ],
+            "properties": {
+                "location": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/location#",
+                    "type": "string",
+                    "label": "Provide details about the location or address of the event",
+                    "input": "textarea"
+                },
+                "description": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/description#",
+                    "type": "string",
+                    "label": "Describe the nature of the premises",
+                    "input": "textarea"
+                },
+                "licensingPremisesRelationship": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/licensingPremisesRelationship#",
+                    "type": "string",
+                    "enum": [
+                        "Neither",
+                        "Premises licence",
+                        "Club premises certificate"
+                    ],
+                    "label": "Does a premises licence or club premises certificate have effect in relation to the premises?",
+                    "input": "radio"
+                },
+                "licensingNumber": {
+                    "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/licensingNumber#",
+                    "type": "string",
+                    "label": "Licence or certificate number",
+                    "input": "text"
+                }
+            },
+            "dependencies": {
+                "licensingPremisesRelationship": {
+                    "oneOf": [
+                        {
+                            "properties": {
+                                "licensingPremisesRelationship": {
+                                    "enum": [
+                                        "Neither"
+                                    ]
+                                }
+                            },
+                            "not": {
+                                "required": [
+                                    "licensingNumber"
+                                ]
+                            }
+                        },
+                        {
+                            "properties": {
+                                "licensingPremisesRelationship": {
+                                    "enum": [
+                                        "Premises licence",
+                                        "Club premises certificate"
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "licensingNumber"
+                            ]
+                        }
+                    ]
+                },
+                "licensingNumber": {
+                    "properties": {
+                        "licensingPremisesRelationship": {
+                            "enum": [
+                                "Premises licence",
+                                "Club premises certificate"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "licensingPremisesRelationship"
+                    ]
+                }
+            }
+        }
+    }
+}

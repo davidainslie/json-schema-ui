@@ -1,0 +1,9 @@
+<div data-ng-controller="JsonSchemaPropertyController">
+    <h1 data-ng-if="property.header" id="{{property.id}}/header" class="page-header">{{property.label}}</h1>
+
+    <h3 data-ng-if="property.subheader" id="{{property.id}}/subheader">{{property.label}}</h3>
+
+    <div data-ng-if="property.properties" data-ng-repeat="jsonSchemaProperty in propertiesOf(property)" data-ng-include="'/assets/partials/json-schema-property.html'"></div>
+
+    <div data-ng-if="property.input" data-ng-include="'/assets/partials/inputs/' + property.input + '.html'" class="form-group"></div>
+</div>

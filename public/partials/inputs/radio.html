@@ -1,0 +1,18 @@
+<div dependencies>
+    <label data-ng-if="property.label" id="{{input}}Label">{{property.label}}<i data-ng-hide="required" class="optional"> (optional)</i></label>
+
+    <p class="form-hint" data-ng-if="property.hints" data-ng-repeat="hint in property.hints">{{hint}}</p>
+
+    <div class="radio-inline" data-ng-repeat="e in property.enum">
+        <label class="control-label" for="{{input}}{{$index}}">
+            <input
+                xt-validate
+                type="radio"
+                id="{{input}}{{$index}}"
+                name="{{input}}{{$index}}"
+                value="{{e}}"
+                properties>
+            {{e}}
+        </label>
+    </div>
+</div>

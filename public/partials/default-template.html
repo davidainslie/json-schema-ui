@@ -1,0 +1,101 @@
+<div>
+    <div class="bs-docs-header" id="content">
+        <div class="container">
+            <h1>{{jsonSchema.title}}</h1>
+            <p>{{jsonSchema.authority}}</p>
+        </div>
+    </div>
+
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary" data-offset-top="-10" bs-affix="" style="position: relative;">
+                    <ul class="nav bs-docs-sidenav">
+                        <!-- ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#applicant-details" bs-scrollspy="" class="ng-scope active">
+                            <a data-ng-href="#/single-page/sidebar#applicant-details" class="ng-binding" href="#/single-page/sidebar#applicant-details">1. Applicant details</a>
+                            <!-- ngIf: section.subsections -->
+                            <ul class="nav ng-scope" data-ng-if="section.subsections">
+                                <!-- ngRepeat: subsection in section.subsections -->
+                                <li data-ng-repeat="subsection in section.subsections" data-target="#applicant-details-personal-details" bs-scrollspy="" class="ng-scope">
+                                    <a data-ng-href="#/single-page/sidebar#applicant-details-personal-details" class="ng-binding" href="#/single-page/sidebar#applicant-details-personal-details">Personal details</a>
+                                </li>
+                                <!-- end ngRepeat: subsection in section.subsections -->
+                                <li data-ng-repeat="subsection in section.subsections" data-target="#applicant-details-contact-details" bs-scrollspy="" class="ng-scope">
+                                    <a data-ng-href="#/single-page/sidebar#applicant-details-contact-details" class="ng-binding" href="#/single-page/sidebar#applicant-details-contact-details">Contact details</a>
+                                </li>
+                                <!-- end ngRepeat: subsection in section.subsections -->
+                            </ul>
+                            <!-- end ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#the-premises" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#the-premises" class="ng-binding" href="#/single-page/sidebar#the-premises">2. The premises</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#the-event" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#the-event" class="ng-binding" href="#/single-page/sidebar#the-event">3. The event</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#licensable-activities" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#licensable-activities" class="ng-binding" href="#/single-page/sidebar#licensable-activities">4. Licensable activities</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#personal-licence" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#personal-licence" class="ng-binding" href="#/single-page/sidebar#personal-licence">5. Personal licence</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#previous-ten" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#previous-ten" class="ng-binding" href="#/single-page/sidebar#previous-ten">6. Previous event notices</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#associates-and-colleagues" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#associates-and-colleagues" class="ng-binding" href="#/single-page/sidebar#associates-and-colleagues">7. Associates and colleagues</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#condition-and-declaration" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#condition-and-declaration" class="ng-binding" href="#/single-page/sidebar#condition-and-declaration">8. Condition and declaration</a>
+                            <!-- ngIf: section.subsections -->
+                            <ul class="nav ng-scope" data-ng-if="section.subsections">
+                                <!-- ngRepeat: subsection in section.subsections -->
+                                <li data-ng-repeat="subsection in section.subsections" data-target="#condition" bs-scrollspy="" class="ng-scope">
+                                    <a data-ng-href="#/single-page/sidebar#condition" class="ng-binding" href="#/single-page/sidebar#condition">Condition</a>
+                                </li>
+                                <!-- end ngRepeat: subsection in section.subsections -->
+                                <li data-ng-repeat="subsection in section.subsections" data-target="#declaration" bs-scrollspy="" class="ng-scope">
+                                    <a data-ng-href="#/single-page/sidebar#declaration" class="ng-binding" href="#/single-page/sidebar#declaration">Declaration</a>
+                                </li>
+                                <!-- end ngRepeat: subsection in section.subsections -->
+                            </ul>
+                            <!-- end ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                        <li data-ng-repeat="section in view.sections" data-target="#submit" bs-scrollspy="" class="ng-scope">
+                            <a data-ng-href="#/single-page/sidebar#submit" class="ng-binding" href="#/single-page/sidebar#submit">9. Submit</a>
+                            <!-- ngIf: section.subsections -->
+                        </li>
+                        <!-- end ngRepeat: section in view.sections -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-6" role="main">
+                <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
+
+                <form xt-form role="form" id="form" name="form" novalidate>
+                    <div class="bs-docs-section" data-ng-repeat="jsonSchemaProperty in propertiesOf(jsonSchema)">
+                        <div data-ng-include="'/assets/partials/json-schema-property.html'"></div>
+                    </div>
+
+                    <button type="submit" id="submit" class="btn btn-success" data-ng-click="submit()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

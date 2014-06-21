@@ -1,0 +1,13 @@
+<div dependencies>
+    <label data-ng-if="property.label" id="{{input}}Label" for="{{input}}">{{property.label}}<i data-ng-hide="required" class="optional"> (optional)</i></label>
+
+    <p class="form-hint" data-ng-if="property.hints" data-ng-repeat="hint in property.hints">{{hint}}</p>
+
+    <input
+        xt-validate
+        type="date"
+        class="form-control"
+        id="{{input}}"
+        name="{{input}}"
+        properties>
+</div>
