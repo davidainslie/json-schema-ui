@@ -20,7 +20,7 @@
             oneOfs.each (oneOf) ->
               if key in JSPath.apply(".required", oneOf)
                 for property of oneOf["properties"] when property != key
-                  dependentModel = "form." + scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").substring(1).replace(/\//g, ".").replace(key, property)
+                  dependentModel = "data." + scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").substring(1).replace(/\//g, ".").replace(key, property)
 
                   for dependentValue in oneOf["properties"]["#{property}"]["enum"]
                     oneOfDependentValues.push "#{dependentModel} == '#{dependentValue}'"

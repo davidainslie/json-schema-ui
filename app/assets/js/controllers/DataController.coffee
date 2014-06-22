@@ -1,9 +1,11 @@
 @app.controller "DataController", ($rootScope, $scope, $modal, $stateParams, toaster, Scroller, Data) ->
+  $scope.data = {}
+
   Data.schema("http://www.kissthinker.com/json-schema-ui/#{$stateParams.id}").then(
     (success) ->
       console.info success
       $scope.jsonSchema = angular.fromJson(success)
-      $scope.form.id = $scope.jsonSchema.id
+      $scope.data.id = $scope.jsonSchema.id
 
     (exception) ->
       console.error exception
@@ -11,13 +13,13 @@
 
   $scope.submit = ->
     if ($scope.form.$valid)
-      Data.save(removeNulls($scope.form)).then(
+      Data.save(removeNulls($scope.data)).then(
         (success) ->
           console.info success
           Scroller.scrollTo "form"
 
-          $scope.form = {}
-          $scope.form.id = $scope.jsonSchema.id
+          $scope.data = {}
+          $scope.data.id = $scope.jsonSchema.id
 
           $scope.form.$setPristine()
           $modal({title: "Successful Submission", content: success.response, animation: "am-fade-and-scale"})

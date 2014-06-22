@@ -3,7 +3,7 @@
   link: (scope, element, attrs) ->
     fullKey = scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").replace(/\//g, "//")
 
-    propertyModel = "form." + scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").substring(1).replace(/\//g, ".")
+    propertyModel = "data." + scope.property.id.replace(scope.jsonSchema.id, "").replace(/#/g, "").substring(1).replace(/\//g, ".")
     console.log propertyModel
     element.attr "data-ng-model", propertyModel
 
