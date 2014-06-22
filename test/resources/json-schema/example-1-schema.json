@@ -6,10 +6,7 @@
     "authority": "of UI generated from JSON schema",
     "presentation": "default-template.html",
     "additionalProperties": false,
-    "required": [
-        "id",
-        "applicantDetails"
-    ],
+    "required": ["id", "applicantDetails"],
     "properties": {
         "id": {
             "type": "string"
@@ -19,34 +16,19 @@
             "type": "object",
             "label": "1. Applicant Details",
             "header": true,
-            "required": [
-                "personalDetails"
-            ],
+            "required": ["personalDetails"],
             "properties": {
                 "personalDetails": {
                     "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails#",
                     "type": "object",
                     "label": "Personal Details",
                     "subheader": true,
-                    "required": [
-                        "fullName"
-                    ],
+                    "required": ["fullName"],
                     "properties": {
                         "title": {
                             "id": "http://www.kissthinker.com/json-schema-ui/example-1/applicantDetails/personalDetails/title#",
                             "type": "string",
-                            "enum": [
-                                "Mr",
-                                "Mrs",
-                                "Miss",
-                                "Ms",
-                                "Dr",
-                                "Rev",
-                                "Sir",
-                                "Lord",
-                                "Lady",
-                                "Dame"
-                            ],
+                            "enum": ["Mr", "Mrs", "Miss", "Ms", "Dr", "Rev", "Sir", "Lord", "Lady", "Dame"],
                             "label": "Title",
                             "input": "select"
                         },
@@ -129,9 +111,7 @@
             "type": "object",
             "label": "2. The premises",
             "header": true,
-            "required": [
-                "location"
-            ],
+            "required": ["location"],
             "properties": {
                 "location": {
                     "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/location#",
@@ -148,11 +128,7 @@
                 "licensingPremisesRelationship": {
                     "id": "http://www.kissthinker.com/json-schema-ui/example-1/premises/licensingPremisesRelationship#",
                     "type": "string",
-                    "enum": [
-                        "Neither",
-                        "Premises licence",
-                        "Club premises certificate"
-                    ],
+                    "enum": ["Neither", "Premises licence", "Club premises certificate"],
                     "label": "Does a premises licence or club premises certificate have effect in relation to the premises?",
                     "input": "radio"
                 },
@@ -165,48 +141,29 @@
             },
             "dependencies": {
                 "licensingPremisesRelationship": {
-                    "oneOf": [
-                        {
-                            "properties": {
-                                "licensingPremisesRelationship": {
-                                    "enum": [
-                                        "Neither"
-                                    ]
-                                }
-                            },
-                            "not": {
-                                "required": [
-                                    "licensingNumber"
-                                ]
+                    "oneOf": [{
+                        "properties": {
+                            "licensingPremisesRelationship": {
+                                "enum": ["Neither"]
                             }
                         },
-                        {
-                            "properties": {
-                                "licensingPremisesRelationship": {
-                                    "enum": [
-                                        "Premises licence",
-                                        "Club premises certificate"
-                                    ]
-                                }
-                            },
-                            "required": [
-                                "licensingNumber"
-                            ]
-                        }
-                    ]
+                        "not": { "required": ["licensingNumber"] }
+                    }, {
+                        "properties": {
+                            "licensingPremisesRelationship": {
+                                "enum": ["Premises licence", "Club premises certificate"]
+                            }
+                        },
+                        "required": ["licensingNumber"]
+                    }]
                 },
                 "licensingNumber": {
                     "properties": {
                         "licensingPremisesRelationship": {
-                            "enum": [
-                                "Premises licence",
-                                "Club premises certificate"
-                            ]
+                            "enum": ["Premises licence", "Club premises certificate"]
                         }
                     },
-                    "required": [
-                        "licensingPremisesRelationship"
-                    ]
+                    "required": ["licensingPremisesRelationship"]
                 }
             }
         }
