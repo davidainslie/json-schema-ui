@@ -1,7 +1,9 @@
 @app.controller "DataController", ($rootScope, $scope, $modal, $stateParams, toaster, Scroller, Data) ->
   $scope.data = {}
 
-  Data.schema("http://www.kissthinker.com/json-schema-ui/#{$stateParams.id}").then(
+  console.log $stateParams.id
+
+  Data.schema($stateParams.id).then(
     (success) ->
       console.info success
       $scope.jsonSchema = angular.fromJson(success)

@@ -2,8 +2,8 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "http://www.kissthinker.com/json-schema-ui/example-1",
     "type": "object",
-    "title": "Temporary Event Notice",
-    "authority": "City of Westminster",
+    "title": "Example 1",
+    "authority": "of UI generated from JSON schema",
     "presentation": "default-template.html",
     "additionalProperties": false,
     "required": [

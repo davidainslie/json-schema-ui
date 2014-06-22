@@ -22,5 +22,5 @@ String::replaceAll = (targetString, subString) ->
 
 String::replaceAllCaseInSensitive = (targetString, subString) ->
   inputString = this
-  inputString = inputString.replace(new RegExp(targetString, "gi"), subString) #replace a string globally and case-insensitive
+  inputString = inputString.replace(new RegExp(targetString, "gi"), subString) # Replace a string globally and case-insensitive
   inputString
