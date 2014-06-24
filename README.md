@@ -1,8 +1,8 @@
 JSON Schema UI
 ==============
 
-Define data content in JSON schema with validations/rules/dependencies and autogenerate UI
-------------------------------------------------------------------------------------------
+Define data content in JSON schema with validations/rules/dependencies and generate UI
+--------------------------------------------------------------------------------------
 
 Application built with the following technologies:
 
