@@ -52,13 +52,13 @@ trait Data extends MongoController with Logging {
               import play.modules.reactivemongo.json.BSONFormats.BSONObjectIDFormat
 
               val _id = BSONObjectID.generate
-              val licenceApplicationBSONObject = Json.obj("_id" -> _id) ++ data.as[JsObject]
+              val dataBSONObject = Json.obj("_id" -> _id) ++ data.as[JsObject]
               // TODO Add timestamp - first needs to be declared in schema
 
-              dataCollection.insert(licenceApplicationBSONObject).map { _ => // Don't care about lastError here (map is called on success)
-                info(s"Created: $licenceApplicationBSONObject")
+              dataCollection.insert(dataBSONObject).map { _ => // Don't care about lastError here (map is called on success)
+                info(s"Created: $dataBSONObject")
 
-                channel push licenceApplicationBSONObject
+                channel push dataBSONObject
                 Created(Json.obj("response" -> s"""Successfully saved with generated ID: ${_id.stringify}"""))
               }
             } getOrElse {
