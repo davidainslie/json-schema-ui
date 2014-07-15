@@ -8,8 +8,8 @@
     .state("home", {
       url: "/", templateUrl: "/assets/partials/dashboard.html"
     })
-    .state("licence-applications-subscribe", {
-      url: "/licence-applications-subscribe", templateUrl: "/assets/partials/licence-applications-subscribe.html"
+    .state("data-subscribe", {
+      url: "/data-subscribe", templateUrl: "/assets/partials/data-subscribe.html"
     })
     .state("single-page", {
       url: "/single-page/*id", templateUrl: "/assets/partials/default-template.html" , controller: "DataController"

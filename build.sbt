@@ -1,5 +1,6 @@
 import com.typesafe.sbt.web.SbtWeb.autoImport._
 import com.typesafe.sbt.less.Import.LessKeys
+import play.PlayScala
 
 name := "json-schema-ui"
 

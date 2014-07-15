@@ -1,0 +1,24 @@
+{
+    "id": "http://www.kissthinker.com/json-schema-ui/example-1",
+    "applicantDetails": {
+        "personalDetails": {
+            "title": "Mr",
+            "fullName": "Batman",
+            "placeOfBirth": "Gotham",
+            "nationalInsuranceNumber": "NS123456C"
+        },
+        "contactDetails": {
+            "telephone": "112233",
+            "address": "Gotham Street",
+            "postcode": "GO2",
+            "city": "Gotham",
+            "country": "USA"
+        }
+    },
+    "premises": {
+        "licensingNumber": "Bat Certificate",
+        "location": "Party at my place!",
+        "description": "Party!",
+        "licensingPremisesRelationship": "Premises licence"
+    }
+}

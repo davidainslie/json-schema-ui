@@ -3,14 +3,25 @@ package data
 import java.net.URL
 import scala.io.Source
 import scala.util.{Failure, Success, Try}
-import play.api.libs.json.JsValue
+import play.api.libs.json.Json.JsValueWrapper
+import play.api.libs.json.{JsObject, Json, JsValue}
 import com.github.fge.jackson.JsonLoader
 import com.github.fge.jsonschema.core.exceptions.ProcessingException
 import com.github.fge.jsonschema.main.JsonSchemaFactory
 import utility.Logging
 
 package object json extends Logging {
-  implicit def urlContentToString(url: URL) = Source.fromURL(url).getLines().mkString
+  implicit def urlContentToString(url: URL): String = Source.fromURL(url).getLines().mkString
+
+  implicit def urlContentToJsValue(url: URL): JsValue = Json.parse(url)
+
+  implicit def jsValueToString(j: JsValue): String = Json.stringify(j)
+
+  def jsClasspathValue(classpath: String): JsValue = Json.parse(getClass.getResource(classpath))
+
+  def jsClasspathObject(classpath: String): JsObject = Json.parse(getClass.getResource(classpath)).as[JsObject]
+
+  def jsObject(fields: (String, JsValueWrapper)*): JsObject = Json.obj(fields: _*)
 
   implicit def jsValueToSchema(schema: JsValue) = new {
     def parse(json: JsValue): Try[JsValue] = try {
