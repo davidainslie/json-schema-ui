@@ -5,7 +5,7 @@
 # Home page
 GET         /                                               controllers.Assets.at(path="/public", file="index.html")
 
-# GET         /api/data/subscribe/all                         controllers.Data.subscribe
+# GET       /api/data/subscribe/all                         controllers.Data.subscribe
 
 GET         /api/data/*id                                   controllers.Data.schema(id: String)
 

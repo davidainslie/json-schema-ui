@@ -12,7 +12,7 @@ trait EmbeddedMongo extends EmbedConnection with CleanAfterExample {
 
   val port = 12345
 
-  val database = "embedded-licence-applications"
+  val database = "embedded-data"
 
   val embeddedMongoConfiguration = Map("mongodb.servers" -> List(s"$host:$port"), "mongodb.db" -> database)
 }
